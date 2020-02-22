@@ -57,18 +57,13 @@ public class GenerateData extends javax.swing.JFrame {
     }
     
     private void InitVariables(){       
-        if ( (!(Batch100.isSelected())) && (!(Batch250.isSelected())) && (!(Batch500.isSelected())) 
-                && (!(Batch1000.isSelected())) && (!(Batch1250.isSelected())) && 
-                (!(Batch1500.isSelected())) && (!(Batch2000.isSelected())) ) {
+        if ( (!(Batch100.isSelected())) && (!(Batch500.isSelected())) && (!(Batch1000.isSelected())) 
+                && (!(Batch1500.isSelected())) && (!(Batch2000.isSelected())) && 
+                (!(Batch3000.isSelected())) && (!(Batch4000.isSelected())) ) {
             System.out.println("Batch is not selected ");
         }else{
              if (Batch100.isSelected()) {
                 batchnumber = 100;
-                System.out.println("Batch Number -> "+batchnumber);
-            }
-
-            if (Batch250.isSelected()) {
-                batchnumber = 250;
                 System.out.println("Batch Number -> "+batchnumber);
             }
 
@@ -82,11 +77,6 @@ public class GenerateData extends javax.swing.JFrame {
                 System.out.println("Batch Number -> "+batchnumber);
             }
 
-            if (Batch1250.isSelected()) {
-                batchnumber = 1250;
-                System.out.println("Batch Number -> "+batchnumber);
-            }
-
             if (Batch1500.isSelected()) {
                 batchnumber = 1500;
                 System.out.println("Batch Number -> "+batchnumber);
@@ -94,6 +84,16 @@ public class GenerateData extends javax.swing.JFrame {
 
             if (Batch2000.isSelected()) {
                 batchnumber = 2000;
+                System.out.println("Batch Number -> "+batchnumber);
+            }
+
+            if (Batch3000.isSelected()) {
+                batchnumber = 3000;
+                System.out.println("Batch Number -> "+batchnumber);
+            }
+
+            if (Batch4000.isSelected()) {
+                batchnumber = 4000;
                 System.out.println("Batch Number -> "+batchnumber);
             }
         }
@@ -112,7 +112,7 @@ public class GenerateData extends javax.swing.JFrame {
             }
         }
         
-        if ( (!(FormatFloat.isSelected())) && (!(FormatInteger.isSelected())) ) {
+        /*if ( (!(FormatFloat.isSelected())) && (!(FormatInteger.isSelected())) ) {
             System.out.println("Format is not selected ");
         }else{
             if ( (FormatFloat.isSelected())) {
@@ -123,7 +123,7 @@ public class GenerateData extends javax.swing.JFrame {
                 isformat="FormatInteger";
                 System.out.println("Format "+isformat);
             }
-        }
+        }*/
         
         if ( (!(OutPutComma.isSelected())) && (!(OutPutTab.isSelected())) ) {
             System.out.println("OutPutFormat is not selected ");
@@ -172,40 +172,164 @@ public class GenerateData extends javax.swing.JFrame {
         buttonGroup3 = new javax.swing.ButtonGroup();
         buttonGroup4 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
-        jPanel3 = new javax.swing.JPanel();
-        OutPutComma = new javax.swing.JRadioButton();
-        OutPutTab = new javax.swing.JRadioButton();
+        Tabs_Major = new javax.swing.JTabbedPane();
+        Tab_Training_Data = new javax.swing.JPanel();
+        jPanel6 = new javax.swing.JPanel();
+        Batch500 = new javax.swing.JRadioButton();
+        Batch100 = new javax.swing.JRadioButton();
+        Batch1000 = new javax.swing.JRadioButton();
+        Batch1500 = new javax.swing.JRadioButton();
+        Batch2000 = new javax.swing.JRadioButton();
+        Batch3000 = new javax.swing.JRadioButton();
+        Batch4000 = new javax.swing.JRadioButton();
+        StartGenerating = new javax.swing.JButton();
+        jLabel2 = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         CategoryCelsius = new javax.swing.JRadioButton();
         CategoryFahrenheit = new javax.swing.JRadioButton();
-        SaveFilePath = new javax.swing.JTextField();
         SaveFile = new javax.swing.JButton();
-        jPanel5 = new javax.swing.JPanel();
-        FormatInteger = new javax.swing.JRadioButton();
-        FormatFloat = new javax.swing.JRadioButton();
-        jPanel6 = new javax.swing.JPanel();
-        Batch250 = new javax.swing.JRadioButton();
-        Batch100 = new javax.swing.JRadioButton();
-        Batch500 = new javax.swing.JRadioButton();
-        Batch1000 = new javax.swing.JRadioButton();
-        Batch1250 = new javax.swing.JRadioButton();
-        Batch1500 = new javax.swing.JRadioButton();
-        Batch2000 = new javax.swing.JRadioButton();
-        StartGenerating = new javax.swing.JButton();
-        jLabel2 = new javax.swing.JLabel();
         AppClose = new javax.swing.JButton();
+        SaveFilePath = new javax.swing.JTextField();
+        jPanel3 = new javax.swing.JPanel();
+        OutPutComma = new javax.swing.JRadioButton();
+        OutPutTab = new javax.swing.JRadioButton();
+        Tab_Testing_Data = new javax.swing.JPanel();
+        jPanel8 = new javax.swing.JPanel();
+        BatchTest500 = new javax.swing.JRadioButton();
+        BatchTest100 = new javax.swing.JRadioButton();
+        BatchTest1000 = new javax.swing.JRadioButton();
+        BatchTest1500 = new javax.swing.JRadioButton();
+        BatchTest2000 = new javax.swing.JRadioButton();
+        BatchTest3000 = new javax.swing.JRadioButton();
+        BatchTest4000 = new javax.swing.JRadioButton();
+        StartTestGenerating = new javax.swing.JButton();
+        jLabel4 = new javax.swing.JLabel();
+        jPanel9 = new javax.swing.JPanel();
+        CategoryTestCelsius = new javax.swing.JRadioButton();
+        CategoryTestFahrenheit = new javax.swing.JRadioButton();
+        SaveTestFile = new javax.swing.JButton();
+        AppClose1 = new javax.swing.JButton();
+        SaveTestFilePath = new javax.swing.JTextField();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setPreferredSize(new java.awt.Dimension(600, 420));
+
+        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Batch Size"));
+
+        Batch500.setText("500");
+
+        Batch100.setText("100");
+
+        Batch1000.setText("1000");
+
+        Batch1500.setText("1500");
+
+        Batch2000.setText("2000");
+
+        Batch3000.setText("3000");
+
+        Batch4000.setText("4000");
+
+        StartGenerating.setText("Start Generating");
+        StartGenerating.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartGeneratingActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(Batch100)
+                .addGap(18, 18, 18)
+                .addComponent(Batch500)
+                .addGap(18, 18, 18)
+                .addComponent(Batch1000)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(StartGenerating)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addComponent(Batch1500)
+                        .addGap(18, 18, 18)
+                        .addComponent(Batch2000)
+                        .addGap(18, 18, 18)
+                        .addComponent(Batch3000)
+                        .addGap(18, 18, 18)
+                        .addComponent(Batch4000)))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
+                .addGap(0, 8, Short.MAX_VALUE)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Batch1500)
+                        .addComponent(Batch2000)
+                        .addComponent(Batch3000)
+                        .addComponent(Batch4000))
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(Batch100)
+                        .addComponent(Batch500)
+                        .addComponent(Batch1000)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(StartGenerating)
+                .addContainerGap())
+        );
+
+        jLabel2.setText("Output");
+
+        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Category"));
+
+        CategoryCelsius.setText("Celsius to Fahrenheit");
+
+        CategoryFahrenheit.setText("Fahrenheit to Celsius");
+
+        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
+        jPanel4.setLayout(jPanel4Layout);
+        jPanel4Layout.setHorizontalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CategoryCelsius)
+                    .addComponent(CategoryFahrenheit))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        jPanel4Layout.setVerticalGroup(
+            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel4Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(CategoryFahrenheit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CategoryCelsius)
+                .addContainerGap())
+        );
+
+        SaveFile.setText("Browse");
+        SaveFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveFileActionPerformed(evt);
+            }
+        });
+
+        AppClose.setText("Exit");
+        AppClose.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AppCloseActionPerformed(evt);
+            }
+        });
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Output Format"));
 
-        buttonGroup3.add(OutPutComma);
         OutPutComma.setText("Comma Separated");
 
-        buttonGroup3.add(OutPutTab);
         OutPutTab.setText("Tab Separated");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -229,161 +353,14 @@ public class GenerateData extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Category"));
-
-        buttonGroup1.add(CategoryCelsius);
-        CategoryCelsius.setText("Celsius");
-
-        buttonGroup1.add(CategoryFahrenheit);
-        CategoryFahrenheit.setText("Fahrenheit");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
+        javax.swing.GroupLayout Tab_Training_DataLayout = new javax.swing.GroupLayout(Tab_Training_Data);
+        Tab_Training_Data.setLayout(Tab_Training_DataLayout);
+        Tab_Training_DataLayout.setHorizontalGroup(
+            Tab_Training_DataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Tab_Training_DataLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(CategoryCelsius)
-                    .addComponent(CategoryFahrenheit))
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addGap(12, 12, 12)
-                .addComponent(CategoryFahrenheit)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(CategoryCelsius)
-                .addContainerGap())
-        );
-
-        SaveFile.setText("Browse");
-        SaveFile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaveFileActionPerformed(evt);
-            }
-        });
-
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder("Format"));
-
-        buttonGroup2.add(FormatInteger);
-        FormatInteger.setText("Integer only");
-
-        buttonGroup2.add(FormatFloat);
-        FormatFloat.setText("Float only");
-
-        javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
-        jPanel5.setLayout(jPanel5Layout);
-        jPanel5Layout.setHorizontalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(FormatFloat)
-                    .addComponent(FormatInteger))
-                .addContainerGap())
-        );
-        jPanel5Layout.setVerticalGroup(
-            jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel5Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(FormatFloat)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(FormatInteger)
-                .addContainerGap())
-        );
-
-        jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Batch Size"));
-
-        buttonGroup4.add(Batch250);
-        Batch250.setText("250");
-
-        buttonGroup4.add(Batch100);
-        Batch100.setText("100");
-
-        buttonGroup4.add(Batch500);
-        Batch500.setText("500");
-
-        buttonGroup4.add(Batch1000);
-        Batch1000.setText("1000");
-
-        buttonGroup4.add(Batch1250);
-        Batch1250.setText("1250");
-
-        buttonGroup4.add(Batch1500);
-        Batch1500.setText("1500");
-
-        buttonGroup4.add(Batch2000);
-        Batch2000.setText("2000");
-
-        StartGenerating.setText("Start Generating");
-        StartGenerating.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                StartGeneratingActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
-        jPanel6.setLayout(jPanel6Layout);
-        jPanel6Layout.setHorizontalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel6Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(Batch100)
-                .addGap(18, 18, 18)
-                .addComponent(Batch250)
-                .addGap(18, 18, 18)
-                .addComponent(Batch500)
-                .addGap(18, 18, 18)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(StartGenerating)
-                    .addGroup(jPanel6Layout.createSequentialGroup()
-                        .addComponent(Batch1000)
-                        .addGap(18, 18, 18)
-                        .addComponent(Batch1250)
-                        .addGap(18, 18, 18)
-                        .addComponent(Batch1500)
-                        .addGap(18, 18, 18)
-                        .addComponent(Batch2000)))
-                .addContainerGap(38, Short.MAX_VALUE))
-        );
-        jPanel6Layout.setVerticalGroup(
-            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createSequentialGroup()
-                .addGap(0, 8, Short.MAX_VALUE)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Batch1000)
-                        .addComponent(Batch1250)
-                        .addComponent(Batch1500)
-                        .addComponent(Batch2000))
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(Batch100)
-                        .addComponent(Batch250)
-                        .addComponent(Batch500)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(StartGenerating)
-                .addContainerGap())
-        );
-
-        jLabel2.setText("Output");
-
-        AppClose.setText("Exit");
-        AppClose.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AppCloseActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(Tab_Training_DataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Tab_Training_DataLayout.createSequentialGroup()
                         .addGap(6, 6, 6)
                         .addComponent(jLabel2)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -392,38 +369,196 @@ public class GenerateData extends javax.swing.JFrame {
                         .addComponent(SaveFile)
                         .addGap(53, 53, 53)
                         .addComponent(AppClose))
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                    .addGroup(Tab_Training_DataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addGroup(Tab_Training_DataLayout.createSequentialGroup()
                             .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(37, 37, 37)
                             .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(14, Short.MAX_VALUE))
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap())
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        Tab_Training_DataLayout.setVerticalGroup(
+            Tab_Training_DataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Tab_Training_DataLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(Tab_Training_DataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                .addGroup(Tab_Training_DataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(SaveFilePath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(SaveFile)
                     .addComponent(jLabel2)
                     .addComponent(AppClose))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
+        );
+
+        Tabs_Major.addTab("Training Data", Tab_Training_Data);
+
+        jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Batch Size"));
+
+        BatchTest500.setText("500");
+
+        BatchTest100.setText("100");
+
+        BatchTest1000.setText("1000");
+
+        BatchTest1500.setText("1500");
+
+        BatchTest2000.setText("2000");
+
+        BatchTest3000.setText("3000");
+
+        BatchTest4000.setText("4000");
+
+        StartTestGenerating.setText("Start Generating");
+        StartTestGenerating.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                StartTestGeneratingActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel8Layout = new javax.swing.GroupLayout(jPanel8);
+        jPanel8.setLayout(jPanel8Layout);
+        jPanel8Layout.setHorizontalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel8Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(BatchTest100)
+                .addGap(18, 18, 18)
+                .addComponent(BatchTest500)
+                .addGap(18, 18, 18)
+                .addComponent(BatchTest1000)
+                .addGap(18, 18, 18)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(StartTestGenerating)
+                    .addGroup(jPanel8Layout.createSequentialGroup()
+                        .addComponent(BatchTest1500)
+                        .addGap(18, 18, 18)
+                        .addComponent(BatchTest2000)
+                        .addGap(18, 18, 18)
+                        .addComponent(BatchTest3000)
+                        .addGap(18, 18, 18)
+                        .addComponent(BatchTest4000)))
+                .addContainerGap(38, Short.MAX_VALUE))
+        );
+        jPanel8Layout.setVerticalGroup(
+            jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel8Layout.createSequentialGroup()
+                .addGap(0, 8, Short.MAX_VALUE)
+                .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(BatchTest1500)
+                        .addComponent(BatchTest2000)
+                        .addComponent(BatchTest3000)
+                        .addComponent(BatchTest4000))
+                    .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(BatchTest100)
+                        .addComponent(BatchTest500)
+                        .addComponent(BatchTest1000)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(StartTestGenerating)
+                .addContainerGap())
+        );
+
+        jLabel4.setText("Output");
+
+        jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder("Category"));
+
+        CategoryTestCelsius.setText("Celsius to Fahrenheit");
+
+        CategoryTestFahrenheit.setText("Fahrenheit to Celsius");
+
+        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
+        jPanel9.setLayout(jPanel9Layout);
+        jPanel9Layout.setHorizontalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(CategoryTestCelsius)
+                    .addComponent(CategoryTestFahrenheit))
+                .addContainerGap(43, Short.MAX_VALUE))
+        );
+        jPanel9Layout.setVerticalGroup(
+            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel9Layout.createSequentialGroup()
+                .addGap(12, 12, 12)
+                .addComponent(CategoryTestFahrenheit)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(CategoryTestCelsius)
+                .addContainerGap())
+        );
+
+        SaveTestFile.setText("Browse");
+        SaveTestFile.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                SaveTestFileActionPerformed(evt);
+            }
+        });
+
+        AppClose1.setText("Exit");
+        AppClose1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                AppClose1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout Tab_Testing_DataLayout = new javax.swing.GroupLayout(Tab_Testing_Data);
+        Tab_Testing_Data.setLayout(Tab_Testing_DataLayout);
+        Tab_Testing_DataLayout.setHorizontalGroup(
+            Tab_Testing_DataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Tab_Testing_DataLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(Tab_Testing_DataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(Tab_Testing_DataLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(SaveTestFilePath, javax.swing.GroupLayout.PREFERRED_SIZE, 250, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(SaveTestFile)
+                        .addGap(53, 53, 53)
+                        .addComponent(AppClose1))
+                    .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap())
+        );
+        Tab_Testing_DataLayout.setVerticalGroup(
+            Tab_Testing_DataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(Tab_Testing_DataLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jPanel9, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(18, 18, 18)
+                .addGroup(Tab_Testing_DataLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(SaveTestFilePath, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(SaveTestFile)
+                    .addComponent(jLabel4)
+                    .addComponent(AppClose1))
+                .addContainerGap())
+        );
+
+        Tabs_Major.addTab("Tesing Data", Tab_Testing_Data);
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Tabs_Major, javax.swing.GroupLayout.DEFAULT_SIZE, 596, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(Tabs_Major, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE)
         );
 
         getContentPane().add(jPanel1, java.awt.BorderLayout.CENTER);
 
         jPanel2.setBackground(new java.awt.Color(204, 204, 204));
+        jPanel2.setPreferredSize(new java.awt.Dimension(596, 80));
 
         jLabel1.setFont(new java.awt.Font("Linux Biolinum Keyboard O", 1, 24)); // NOI18N
         jLabel1.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
@@ -441,7 +576,7 @@ public class GenerateData extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 541, Short.MAX_VALUE))
+                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, 572, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -450,7 +585,7 @@ public class GenerateData extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, 32, Short.MAX_VALUE)
+                .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -459,20 +594,13 @@ public class GenerateData extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-
-    private void SaveFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveFileActionPerformed
-        // TODO add your handling code here:
-        SaveFile();
-    }//GEN-LAST:event_SaveFileActionPerformed
-
-
     private void StartGeneratingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartGeneratingActionPerformed
-        // TODO add your handling code here:      
+        // TODO add your handling code here:
         InitVariables();
-        if ( (batchnumber<100) || (iscategory=="")  || (isformat=="") || (isoutput=="") ) {
+        if ( (batchnumber<100) || (iscategory=="")  /*|| (isformat=="")*/ || (isoutput=="") ) {
             JOptionPane.showMessageDialog(this,"Pick an element per category","Blank elements"
-                    ,JOptionPane.ERROR_MESSAGE);
-        }else{       
+                ,JOptionPane.ERROR_MESSAGE);
+        }else{
             if (path==null) {
                 System.out.println("Path Is Empty");
                 SaveFile();
@@ -480,36 +608,36 @@ public class GenerateData extends javax.swing.JFrame {
                 BufferedWriter writer = null;
                 try {
                     writer = new BufferedWriter(new FileWriter(path+isextension, true));
-                    
+
                     if (iscategory=="CategoryCelsius") {
                         writer.write("Celsius"+isseparetor+"Fahrenheit\n");
-                            
+
                         for (int i = 0; i < batchnumber; i++) {
-                            int valgenerated = getRandomNumberInRange(0, 1000);
+                            int valgenerated = getRandomNumberInRange(0, 2500);
                             float pass=Float.parseFloat(String.valueOf(valgenerated));
                             float newd;
 
                             newd = CelsiustoFah(pass);
-                            writer.append(String.valueOf(valgenerated) +isseparetor+ String.valueOf(newd) +"\n");
+                            writer.append(String.valueOf(valgenerated) +"\n");
+                            //writer.append(String.valueOf(valgenerated) +isseparetor+ String.valueOf(newd) +"\n");
                         }
 
                     } else if (iscategory=="CategoryFahrenheit") {
                         writer.write("Fahrenheit"+isseparetor+"Celsius\n");
-                            
+
                         for (int i = 0; i < batchnumber; i++) {
-                            int valgenerated = getRandomNumberInRange(0, 1000);
+                            int valgenerated = getRandomNumberInRange(0, 2500);
                             float pass=Float.parseFloat(String.valueOf(valgenerated));
                             float newd;
 
                             newd = FahtoCelsius(pass);
                             writer.append(String.valueOf(valgenerated) +isseparetor+ String.valueOf(newd) +"\n");
-                        } 
+                        }
                     }
-                    
-                         
+
                     JOptionPane.showMessageDialog(this,"Successfully wrote Output to "+path+isextension,"Generator"
-                            ,JOptionPane.ERROR_MESSAGE);
-                    
+                        ,JOptionPane.ERROR_MESSAGE);
+
                 } catch (IOException ex) {
                     System.out.println("An ********** ."+ex.getMessage());
                 } finally {
@@ -523,11 +651,86 @@ public class GenerateData extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_StartGeneratingActionPerformed
 
+    private void SaveFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveFileActionPerformed
+        // TODO add your handling code here:
+        SaveFile();
+    }//GEN-LAST:event_SaveFileActionPerformed
+
     private void AppCloseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppCloseActionPerformed
         // TODO add your handling code here:
         System.gc();
         System.exit(0);
     }//GEN-LAST:event_AppCloseActionPerformed
+
+    private void StartTestGeneratingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartTestGeneratingActionPerformed
+        // TODO add your handling code here:
+        InitVariables();
+        if ( (batchnumber<100) || (iscategory=="")  /*|| (isformat=="")*/ || (isoutput=="") ) {
+            JOptionPane.showMessageDialog(this,"Pick an element per category","Blank elements"
+                ,JOptionPane.ERROR_MESSAGE);
+        }else{
+            if (path==null) {
+                System.out.println("Path Is Empty");
+                SaveFile();
+            } else {
+                BufferedWriter writer = null;
+                try {
+                    writer = new BufferedWriter(new FileWriter(path+isextension, true));
+
+                    if (iscategory=="CategoryCelsius") {
+                        writer.write("Celsius"+isseparetor+"Fahrenheit\n");
+
+                        for (int i = 0; i < batchnumber; i++) {
+                            int valgenerated = getRandomNumberInRange(0, 2500);
+                            float pass=Float.parseFloat(String.valueOf(valgenerated));
+                            float newd;
+
+                            newd = CelsiustoFah(pass);
+                            writer.append(String.valueOf(valgenerated) +"\n");
+                            //writer.append(String.valueOf(valgenerated) +isseparetor+ String.valueOf(newd) +"\n");
+                        }
+
+                    } else if (iscategory=="CategoryFahrenheit") {
+                        writer.write("Fahrenheit"+isseparetor+"Celsius\n");
+
+                        for (int i = 0; i < batchnumber; i++) {
+                            int valgenerated = getRandomNumberInRange(0, 2500);
+                            float pass=Float.parseFloat(String.valueOf(valgenerated));
+                            float newd;
+
+                            newd = FahtoCelsius(pass);
+                            writer.append(String.valueOf(valgenerated) +isseparetor+ String.valueOf(newd) +"\n");
+                        }
+                    }
+
+                    JOptionPane.showMessageDialog(this,"Successfully wrote Output to "+path+isextension,"Generator"
+                        ,JOptionPane.ERROR_MESSAGE);
+
+                } catch (IOException ex) {
+                    System.out.println("An ********** ."+ex.getMessage());
+                } finally {
+                    try {
+                        writer.close();
+                    } catch (IOException ex) {
+                        Logger.getLogger(GenerateData.class.getName()).log(Level.SEVERE, null, ex);
+                    }
+                }
+            }
+        }
+    }//GEN-LAST:event_StartTestGeneratingActionPerformed
+
+    private void SaveTestFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveTestFileActionPerformed
+        // TODO add your handling code here:
+        SaveFile();
+    }//GEN-LAST:event_SaveTestFileActionPerformed
+
+    private void AppClose1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppClose1ActionPerformed
+        // TODO add your handling code here:
+        System.gc();
+        System.exit(0);
+    }//GEN-LAST:event_AppClose1ActionPerformed
+
+
 
     /**
      * @param args the command line arguments
@@ -567,22 +770,36 @@ public class GenerateData extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton AppClose;
+    private javax.swing.JButton AppClose1;
     private javax.swing.JRadioButton Batch100;
     private javax.swing.JRadioButton Batch1000;
-    private javax.swing.JRadioButton Batch1250;
     private javax.swing.JRadioButton Batch1500;
     private javax.swing.JRadioButton Batch2000;
-    private javax.swing.JRadioButton Batch250;
+    private javax.swing.JRadioButton Batch3000;
+    private javax.swing.JRadioButton Batch4000;
     private javax.swing.JRadioButton Batch500;
+    private javax.swing.JRadioButton BatchTest100;
+    private javax.swing.JRadioButton BatchTest1000;
+    private javax.swing.JRadioButton BatchTest1500;
+    private javax.swing.JRadioButton BatchTest2000;
+    private javax.swing.JRadioButton BatchTest3000;
+    private javax.swing.JRadioButton BatchTest4000;
+    private javax.swing.JRadioButton BatchTest500;
     private javax.swing.JRadioButton CategoryCelsius;
     private javax.swing.JRadioButton CategoryFahrenheit;
-    private javax.swing.JRadioButton FormatFloat;
-    private javax.swing.JRadioButton FormatInteger;
+    private javax.swing.JRadioButton CategoryTestCelsius;
+    private javax.swing.JRadioButton CategoryTestFahrenheit;
     private javax.swing.JRadioButton OutPutComma;
     private javax.swing.JRadioButton OutPutTab;
     private javax.swing.JButton SaveFile;
     private javax.swing.JTextField SaveFilePath;
+    private javax.swing.JButton SaveTestFile;
+    private javax.swing.JTextField SaveTestFilePath;
     private javax.swing.JButton StartGenerating;
+    private javax.swing.JButton StartTestGenerating;
+    private javax.swing.JPanel Tab_Testing_Data;
+    private javax.swing.JPanel Tab_Training_Data;
+    private javax.swing.JTabbedPane Tabs_Major;
     private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
@@ -590,11 +807,13 @@ public class GenerateData extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
+    private javax.swing.JPanel jPanel8;
+    private javax.swing.JPanel jPanel9;
     // End of variables declaration//GEN-END:variables
 }
