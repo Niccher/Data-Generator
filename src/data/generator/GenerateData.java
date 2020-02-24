@@ -22,8 +22,9 @@ import javax.swing.JOptionPane;
  */
 public class GenerateData extends javax.swing.JFrame {
     
-    int batchnumber=0;
+    int batchtrainnumber=0, batchtestnumber=0;
     String path,iscategory,isformat,isoutput,isseparetor,isextension;
+    String pathtest,iscategorytest,isseparetortest,isextensiontest;
 
     /**
      * Creates new form Nuevo
@@ -56,45 +57,45 @@ public class GenerateData extends javax.swing.JFrame {
         return fah;
     }
     
-    private void InitVariables(){       
+    private void InitTrainingVariables(){       
         if ( (!(Batch100.isSelected())) && (!(Batch500.isSelected())) && (!(Batch1000.isSelected())) 
                 && (!(Batch1500.isSelected())) && (!(Batch2000.isSelected())) && 
                 (!(Batch3000.isSelected())) && (!(Batch4000.isSelected())) ) {
             System.out.println("Batch is not selected ");
         }else{
              if (Batch100.isSelected()) {
-                batchnumber = 100;
-                System.out.println("Batch Number -> "+batchnumber);
+                batchtrainnumber = 100;
+                System.out.println("Batch Number -> "+batchtrainnumber);
             }
 
             if (Batch500.isSelected()) {
-                batchnumber = 500;
-                System.out.println("Batch Number -> "+batchnumber);
+                batchtrainnumber = 500;
+                System.out.println("Batch Number -> "+batchtrainnumber);
             }
 
             if (Batch1000.isSelected()) {
-                batchnumber = 1000;
-                System.out.println("Batch Number -> "+batchnumber);
+                batchtrainnumber = 1000;
+                System.out.println("Batch Number -> "+batchtrainnumber);
             }
 
             if (Batch1500.isSelected()) {
-                batchnumber = 1500;
-                System.out.println("Batch Number -> "+batchnumber);
+                batchtrainnumber = 1500;
+                System.out.println("Batch Number -> "+batchtrainnumber);
             }
 
             if (Batch2000.isSelected()) {
-                batchnumber = 2000;
-                System.out.println("Batch Number -> "+batchnumber);
+                batchtrainnumber = 2000;
+                System.out.println("Batch Number -> "+batchtrainnumber);
             }
 
             if (Batch3000.isSelected()) {
-                batchnumber = 3000;
-                System.out.println("Batch Number -> "+batchnumber);
+                batchtrainnumber = 3000;
+                System.out.println("Batch Number -> "+batchtrainnumber);
             }
 
             if (Batch4000.isSelected()) {
-                batchnumber = 4000;
-                System.out.println("Batch Number -> "+batchnumber);
+                batchtrainnumber = 4000;
+                System.out.println("Batch Number -> "+batchtrainnumber);
             }
         }
         
@@ -111,19 +112,6 @@ public class GenerateData extends javax.swing.JFrame {
                 System.out.println("Category "+iscategory);
             }
         }
-        
-        /*if ( (!(FormatFloat.isSelected())) && (!(FormatInteger.isSelected())) ) {
-            System.out.println("Format is not selected ");
-        }else{
-            if ( (FormatFloat.isSelected())) {
-                isformat="FormatFloat";
-                System.out.println("Format "+isformat);
-            }
-            if ( (FormatInteger.isSelected())) {
-                isformat="FormatInteger";
-                System.out.println("Format "+isformat);
-            }
-        }*/
         
         if ( (!(OutPutComma.isSelected())) && (!(OutPutTab.isSelected())) ) {
             System.out.println("OutPutFormat is not selected ");
@@ -144,6 +132,64 @@ public class GenerateData extends javax.swing.JFrame {
         
     }
     
+    private void InitTestVariables(){       
+        if ( (!(BatchTest100.isSelected())) && (!(BatchTest500.isSelected())) && (!(BatchTest1000.isSelected())) 
+                && (!(BatchTest1500.isSelected())) && (!(BatchTest2000.isSelected())) && 
+                (!(BatchTest3000.isSelected())) && (!(BatchTest4000.isSelected())) ) {
+            System.out.println("Batch is not selected ");
+        }else{
+             if (BatchTest100.isSelected()) {
+                batchtestnumber = 100;
+                System.out.println("Batch Number -> "+batchtestnumber);
+            }
+
+            if (BatchTest500.isSelected()) {
+                batchtestnumber = 500;
+                System.out.println("Batch Number -> "+batchtestnumber);
+            }
+
+            if (BatchTest1000.isSelected()) {
+                batchtestnumber = 1000;
+                System.out.println("Batch Number -> "+batchtestnumber);
+            }
+
+            if (BatchTest1500.isSelected()) {
+                batchtestnumber = 1500;
+                System.out.println("Batch Number -> "+batchtestnumber);
+            }
+
+            if (BatchTest2000.isSelected()) {
+                batchtestnumber = 2000;
+                System.out.println("Batch Number -> "+batchtestnumber);
+            }
+
+            if (BatchTest3000.isSelected()) {
+                batchtestnumber = 3000;
+                System.out.println("Batch Number -> "+batchtestnumber);
+            }
+
+            if (BatchTest4000.isSelected()) {
+                batchtestnumber = 4000;
+                System.out.println("Batch Number -> "+batchtestnumber);
+            }
+        }
+        
+        
+        if ( (!(CategoryTestFahrenheit.isSelected())) && (!(CategoryTestCelsius.isSelected())) ) {
+            System.out.println("Category is not selected ");
+        }else{
+            if ( (CategoryTestCelsius.isSelected())) {
+                iscategorytest="CategoryCelsius";
+                System.out.println("Category "+iscategorytest+" to Fahrenheit");
+            }
+            if ( (CategoryTestFahrenheit.isSelected())) {
+                iscategorytest="CategoryFahrenheit";
+                System.out.println("Category "+iscategorytest+" to Celsius");
+            }
+        }
+        
+    }
+    
     private void SaveFile(){
         JFileChooser fileChooser = new JFileChooser();
         fileChooser.setDialogTitle("Specify output Destination");   
@@ -155,6 +201,20 @@ public class GenerateData extends javax.swing.JFrame {
             System.out.println("Save as file: " + fileToSave.getAbsolutePath());
             path=String.valueOf(fileChooser.getSelectedFile());
             SaveFilePath.setText(String.valueOf(fileChooser.getSelectedFile()));
+        }
+    }
+    
+    private void SaveTestFile(){
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setDialogTitle("Specify output Destination");   
+
+        int userSelection = fileChooser.showSaveDialog(this);
+
+        if (userSelection == JFileChooser.APPROVE_OPTION) {
+            File fileToSave = fileChooser.getSelectedFile();
+            System.out.println("Save as file: " + fileToSave.getAbsolutePath());
+            pathtest=String.valueOf(fileChooser.getSelectedFile());
+            SaveTestFilePath.setText(String.valueOf(fileChooser.getSelectedFile()));
         }
     }
 
@@ -171,6 +231,8 @@ public class GenerateData extends javax.swing.JFrame {
         buttonGroup2 = new javax.swing.ButtonGroup();
         buttonGroup3 = new javax.swing.ButtonGroup();
         buttonGroup4 = new javax.swing.ButtonGroup();
+        buttonGroup5 = new javax.swing.ButtonGroup();
+        buttonGroup6 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         Tabs_Major = new javax.swing.JTabbedPane();
         Tab_Training_Data = new javax.swing.JPanel();
@@ -219,18 +281,25 @@ public class GenerateData extends javax.swing.JFrame {
 
         jPanel6.setBorder(javax.swing.BorderFactory.createTitledBorder("Batch Size"));
 
+        buttonGroup3.add(Batch500);
         Batch500.setText("500");
 
+        buttonGroup3.add(Batch100);
         Batch100.setText("100");
 
+        buttonGroup3.add(Batch1000);
         Batch1000.setText("1000");
 
+        buttonGroup3.add(Batch1500);
         Batch1500.setText("1500");
 
+        buttonGroup3.add(Batch2000);
         Batch2000.setText("2000");
 
+        buttonGroup3.add(Batch3000);
         Batch3000.setText("3000");
 
+        buttonGroup3.add(Batch4000);
         Batch4000.setText("4000");
 
         StartGenerating.setText("Start Generating");
@@ -287,8 +356,10 @@ public class GenerateData extends javax.swing.JFrame {
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Category"));
 
+        buttonGroup1.add(CategoryCelsius);
         CategoryCelsius.setText("Celsius to Fahrenheit");
 
+        buttonGroup1.add(CategoryFahrenheit);
         CategoryFahrenheit.setText("Fahrenheit to Celsius");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
@@ -328,8 +399,10 @@ public class GenerateData extends javax.swing.JFrame {
 
         jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Output Format"));
 
+        buttonGroup2.add(OutPutComma);
         OutPutComma.setText("Comma Separated");
 
+        buttonGroup2.add(OutPutTab);
         OutPutTab.setText("Tab Separated");
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
@@ -399,19 +472,33 @@ public class GenerateData extends javax.swing.JFrame {
 
         jPanel8.setBorder(javax.swing.BorderFactory.createTitledBorder("Batch Size"));
 
+        buttonGroup6.add(BatchTest500);
         BatchTest500.setText("500");
+        BatchTest500.setToolTipText("");
 
+        buttonGroup6.add(BatchTest100);
         BatchTest100.setText("100");
+        BatchTest100.setToolTipText("");
 
+        buttonGroup6.add(BatchTest1000);
         BatchTest1000.setText("1000");
+        BatchTest1000.setToolTipText("");
 
+        buttonGroup6.add(BatchTest1500);
         BatchTest1500.setText("1500");
+        BatchTest1500.setToolTipText("");
 
+        buttonGroup6.add(BatchTest2000);
         BatchTest2000.setText("2000");
+        BatchTest2000.setToolTipText("");
 
+        buttonGroup6.add(BatchTest3000);
         BatchTest3000.setText("3000");
+        BatchTest3000.setToolTipText("");
 
+        buttonGroup6.add(BatchTest4000);
         BatchTest4000.setText("4000");
+        BatchTest4000.setToolTipText("");
 
         StartTestGenerating.setText("Start Generating");
         StartTestGenerating.addActionListener(new java.awt.event.ActionListener() {
@@ -467,8 +554,10 @@ public class GenerateData extends javax.swing.JFrame {
 
         jPanel9.setBorder(javax.swing.BorderFactory.createTitledBorder("Category"));
 
+        buttonGroup5.add(CategoryTestCelsius);
         CategoryTestCelsius.setText("Celsius to Fahrenheit");
 
+        buttonGroup5.add(CategoryTestFahrenheit);
         CategoryTestFahrenheit.setText("Fahrenheit to Celsius");
 
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
@@ -596,8 +685,8 @@ public class GenerateData extends javax.swing.JFrame {
 
     private void StartGeneratingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartGeneratingActionPerformed
         // TODO add your handling code here:
-        InitVariables();
-        if ( (batchnumber<100) || (iscategory=="")  /*|| (isformat=="")*/ || (isoutput=="") ) {
+        InitTrainingVariables();
+        if ( (batchtrainnumber<100) || (iscategory=="")  /*|| (isformat=="")*/ || (isoutput=="") ) {
             JOptionPane.showMessageDialog(this,"Pick an element per category","Blank elements"
                 ,JOptionPane.ERROR_MESSAGE);
         }else{
@@ -612,20 +701,19 @@ public class GenerateData extends javax.swing.JFrame {
                     if (iscategory=="CategoryCelsius") {
                         writer.write("Celsius"+isseparetor+"Fahrenheit\n");
 
-                        for (int i = 0; i < batchnumber; i++) {
+                        for (int i = 0; i < batchtrainnumber; i++) {
                             int valgenerated = getRandomNumberInRange(0, 2500);
                             float pass=Float.parseFloat(String.valueOf(valgenerated));
                             float newd;
 
                             newd = CelsiustoFah(pass);
-                            writer.append(String.valueOf(valgenerated) +"\n");
-                            //writer.append(String.valueOf(valgenerated) +isseparetor+ String.valueOf(newd) +"\n");
+                            writer.append(String.valueOf(valgenerated) +isseparetor+ String.valueOf(newd) +"\n");
                         }
 
                     } else if (iscategory=="CategoryFahrenheit") {
                         writer.write("Fahrenheit"+isseparetor+"Celsius\n");
 
-                        for (int i = 0; i < batchnumber; i++) {
+                        for (int i = 0; i < batchtrainnumber; i++) {
                             int valgenerated = getRandomNumberInRange(0, 2500);
                             float pass=Float.parseFloat(String.valueOf(valgenerated));
                             float newd;
@@ -634,9 +722,13 @@ public class GenerateData extends javax.swing.JFrame {
                             writer.append(String.valueOf(valgenerated) +isseparetor+ String.valueOf(newd) +"\n");
                         }
                     }
+                    
+                    writer.flush();
 
                     JOptionPane.showMessageDialog(this,"Successfully wrote Output to "+path+isextension,"Generator"
                         ,JOptionPane.ERROR_MESSAGE);
+                    
+                    path=null;
 
                 } catch (IOException ex) {
                     System.out.println("An ********** ."+ex.getMessage());
@@ -664,47 +756,52 @@ public class GenerateData extends javax.swing.JFrame {
 
     private void StartTestGeneratingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartTestGeneratingActionPerformed
         // TODO add your handling code here:
-        InitVariables();
-        if ( (batchnumber<100) || (iscategory=="")  /*|| (isformat=="")*/ || (isoutput=="") ) {
+        InitTestVariables();
+        if ( (batchtestnumber<100) || (iscategorytest=="") ) {
             JOptionPane.showMessageDialog(this,"Pick an element per category","Blank elements"
                 ,JOptionPane.ERROR_MESSAGE);
         }else{
-            if (path==null) {
+            if (pathtest==null) {
                 System.out.println("Path Is Empty");
-                SaveFile();
+                SaveTestFile();
             } else {
                 BufferedWriter writer = null;
                 try {
-                    writer = new BufferedWriter(new FileWriter(path+isextension, true));
+                    writer = new BufferedWriter(new FileWriter(pathtest, true));
 
-                    if (iscategory=="CategoryCelsius") {
-                        writer.write("Celsius"+isseparetor+"Fahrenheit\n");
+                    if (iscategorytest=="CategoryCelsius") {
+                        writer.write("Celsius,Fahrenheit\n");
 
-                        for (int i = 0; i < batchnumber; i++) {
+                        for (int i = 0; i < batchtestnumber; i++) {
                             int valgenerated = getRandomNumberInRange(0, 2500);
                             float pass=Float.parseFloat(String.valueOf(valgenerated));
                             float newd;
 
                             newd = CelsiustoFah(pass);
                             writer.append(String.valueOf(valgenerated) +"\n");
-                            //writer.append(String.valueOf(valgenerated) +isseparetor+ String.valueOf(newd) +"\n");
                         }
+                        
+                        writer.flush();
 
-                    } else if (iscategory=="CategoryFahrenheit") {
-                        writer.write("Fahrenheit"+isseparetor+"Celsius\n");
+                    } else if (iscategorytest=="CategoryFahrenheit") {
+                        writer.write("Fahrenheit,Celsius\n");
 
-                        for (int i = 0; i < batchnumber; i++) {
+                        for (int i = 0; i < batchtestnumber; i++) {
                             int valgenerated = getRandomNumberInRange(0, 2500);
                             float pass=Float.parseFloat(String.valueOf(valgenerated));
                             float newd;
 
                             newd = FahtoCelsius(pass);
-                            writer.append(String.valueOf(valgenerated) +isseparetor+ String.valueOf(newd) +"\n");
+                            writer.append(String.valueOf(valgenerated) +"\n");
                         }
+                        
+                        writer.flush();
                     }
 
-                    JOptionPane.showMessageDialog(this,"Successfully wrote Output to "+path+isextension,"Generator"
+                    JOptionPane.showMessageDialog(this,"Successfully wrote Output to "+pathtest,"Generator"
                         ,JOptionPane.ERROR_MESSAGE);
+                    
+                    pathtest=null;
 
                 } catch (IOException ex) {
                     System.out.println("An ********** ."+ex.getMessage());
@@ -721,7 +818,7 @@ public class GenerateData extends javax.swing.JFrame {
 
     private void SaveTestFileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaveTestFileActionPerformed
         // TODO add your handling code here:
-        SaveFile();
+        SaveTestFile();
     }//GEN-LAST:event_SaveTestFileActionPerformed
 
     private void AppClose1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppClose1ActionPerformed
@@ -804,6 +901,8 @@ public class GenerateData extends javax.swing.JFrame {
     private javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.ButtonGroup buttonGroup3;
     private javax.swing.ButtonGroup buttonGroup4;
+    private javax.swing.ButtonGroup buttonGroup5;
+    private javax.swing.ButtonGroup buttonGroup6;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

@@ -10,6 +10,10 @@
     </Component>
     <Component class="javax.swing.ButtonGroup" name="buttonGroup4">
     </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup5">
+    </Component>
+    <Component class="javax.swing.ButtonGroup" name="buttonGroup6">
+    </Component>
   </NonVisualComponents>
   <Properties>
     <Property name="defaultCloseOperation" type="int" value="3"/>
@@ -184,36 +188,57 @@
                   <SubComponents>
                     <Component class="javax.swing.JRadioButton" name="Batch500">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup3"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="500"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="Batch100">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup3"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="100"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="Batch1000">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup3"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="1000"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="Batch1500">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup3"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="1500"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="Batch2000">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup3"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="2000"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="Batch3000">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup3"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="3000"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="Batch4000">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup3"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="4000"/>
                       </Properties>
                     </Component>
@@ -269,11 +294,17 @@
                   <SubComponents>
                     <Component class="javax.swing.JRadioButton" name="CategoryCelsius">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup1"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Celsius to Fahrenheit"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="CategoryFahrenheit">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup1"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Fahrenheit to Celsius"/>
                       </Properties>
                     </Component>
@@ -334,11 +365,17 @@
                   <SubComponents>
                     <Component class="javax.swing.JRadioButton" name="OutPutComma">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup2"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Comma Separated"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="OutPutTab">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup2"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Tab Separated"/>
                       </Properties>
                     </Component>
@@ -461,37 +498,65 @@
                   <SubComponents>
                     <Component class="javax.swing.JRadioButton" name="BatchTest500">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup6"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="500"/>
+                        <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="BatchTest100">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup6"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="100"/>
+                        <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="BatchTest1000">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup6"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="1000"/>
+                        <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="BatchTest1500">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup6"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="1500"/>
+                        <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="BatchTest2000">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup6"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="2000"/>
+                        <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="BatchTest3000">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup6"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="3000"/>
+                        <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="BatchTest4000">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup6"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="4000"/>
+                        <Property name="toolTipText" type="java.lang.String" value=""/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JButton" name="StartTestGenerating">
@@ -546,11 +611,17 @@
                   <SubComponents>
                     <Component class="javax.swing.JRadioButton" name="CategoryTestCelsius">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup5"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Celsius to Fahrenheit"/>
                       </Properties>
                     </Component>
                     <Component class="javax.swing.JRadioButton" name="CategoryTestFahrenheit">
                       <Properties>
+                        <Property name="buttonGroup" type="javax.swing.ButtonGroup" editor="org.netbeans.modules.form.RADComponent$ButtonGroupPropertyEditor">
+                          <ComponentRef name="buttonGroup5"/>
+                        </Property>
                         <Property name="text" type="java.lang.String" value="Fahrenheit to Celsius"/>
                       </Properties>
                     </Component>
