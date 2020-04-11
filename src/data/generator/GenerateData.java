@@ -40,6 +40,15 @@ public class GenerateData extends javax.swing.JFrame {
         this.setLocation(locationX, locationY);
     }
     
+    
+    private void NullifyTrain(){
+        path = null;iscategory = null;isformat = null;isoutput = null;isseparetor = null;isextension = null;
+    }
+    
+    private void NullifyTest(){
+        pathtest = null;iscategorytest = null;isseparetortest = null;isextensiontest = null;
+    }
+    
     private int getRandomNumberInRange(int min, int max) {
 	Random r = new Random();
         return r.ints(min, (max + 1)).limit(1).findFirst().getAsInt();
@@ -69,7 +78,8 @@ public class GenerateData extends javax.swing.JFrame {
         return fah;
     }*/
     
-    private void InitTrainingVariables(){       
+    private void InitTrainingVariables(){  
+        NullifyTrain();
         if ( (!(Batch500.isSelected())) && (!(Batch2000.isSelected())) && (!(Batch4000.isSelected())) 
                 && (!(Batch8000.isSelected())) && (!(Batch15000.isSelected())) && 
                 (!(Batch20000.isSelected())) && (!(Batch25000.isSelected())) ) {
@@ -144,7 +154,8 @@ public class GenerateData extends javax.swing.JFrame {
         
     }
     
-    private void InitTestVariables(){       
+    private void InitTestVariables(){    
+        NullifyTest();
         if ( (!(BatchTest500.isSelected())) && (!(BatchTest1000.isSelected())) && (!(BatchTest2000.isSelected())) 
                 && (!(BatchTest4000.isSelected())) && (!(BatchTest6000.isSelected())) && 
                 (!(BatchTest8000.isSelected())) && (!(BatchTest10000.isSelected())) ) {
@@ -700,7 +711,7 @@ public class GenerateData extends javax.swing.JFrame {
     private void StartGeneratingActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StartGeneratingActionPerformed
         // TODO add your handling code here:
         InitTrainingVariables();
-        if ( (batchtrainnumber<100) || (iscategory==null)  /*|| (isseparetor=="")*/ || (isoutput=="") ) {
+        if ( (batchtrainnumber<100) || (iscategory==null)  || (isseparetor==null) || (isoutput==null) ) {
             JOptionPane.showMessageDialog(this,"Pick an element per category","Blank elements"
                 ,JOptionPane.ERROR_MESSAGE);
         }else{
